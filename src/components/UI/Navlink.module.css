@@ -1,0 +1,10 @@
+.btn {
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 100%;
+}
