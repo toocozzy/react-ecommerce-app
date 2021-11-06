@@ -21,6 +21,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+ 
  <h3 align="center">react-ecommerce-app</h3>
 
   <p align="center">
@@ -32,11 +33,8 @@
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
