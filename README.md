@@ -21,9 +21,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
-
-  <h3 align="center">react-ecommerce-app</h3>
+ <h3 align="center">react-ecommerce-app</h3>
 
   <p align="center">
     Minimalistic e-commerce website
@@ -31,8 +29,6 @@
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    
   </p>
 </div>
 
