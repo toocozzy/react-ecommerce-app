@@ -1,1 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arvo", sans-serif;
+}
 
+@font-face {
+  font-family: "Arvo";
+  src: local("Arvo"), url(./fonts/Arvo/Arvo-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: local("Titillium Web"),
+    url(./fonts/Titillium_Web/TitilliumWeb-Regular.ttf) format("truetype");
+}

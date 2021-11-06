@@ -1,4 +1,5 @@
 import React from "react";
+import ItemsList from "./components/Items/ItemsList";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -7,6 +8,9 @@ function App() {
       <header>
         <Navbar />
       </header>
+      <main>
+        <ItemsList />
+      </main>
     </>
   );
 }
