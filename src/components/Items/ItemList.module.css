@@ -1,8 +1,31 @@
 .items-section {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   width: 100%;
   overflow: hidden;
 }
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .items-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+/* .items-container {
+  width: 100%;
+  border: 2px solid orange;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+} */
