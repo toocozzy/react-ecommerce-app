@@ -26,7 +26,7 @@
   <h3 align="center">react-ecommerce-app</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Minimalistic e-commerce website
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
