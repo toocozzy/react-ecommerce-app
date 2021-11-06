@@ -38,21 +38,21 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className={styles["social-container"]}>
-          <a href="#">
-            <i class="ri-instagram-fill"></i>
-          </a>
-          <a href="#">
-            <i class="ri-facebook-fill"></i>
-          </a>
-
-          <a href="#">
-            <i class="ri-twitter-fill"></i>
-          </a>
-        </div>
         <div className={styles.branding}>
           <span className={styles.logo}>toocozzy</span>
           <p>&copy; toocozzy. all rights reserved</p>
+          <div className={styles["social-container"]}>
+            <a href="#">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="#">
+              <i class="ri-facebook-fill"></i>
+            </a>
+
+            <a href="#">
+              <i class="ri-twitter-fill"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
