@@ -19,31 +19,31 @@ const DUMMY_ITEMS = [
     id: "i2",
     img: FogHoodie,
     name: "Fear of God Essentials Knit Pullover Hoodie",
-    price: "$500",
+    price: "$490,00",
   },
   {
     id: "i3",
     img: ConverseOW,
     name: "Converse x Off-White Vulcanized",
-    price: "$500",
+    price: "$1030,00",
   },
   {
     id: "i4",
     img: NewBalance,
     name: "New Balance 990v5",
-    price: "$500",
+    price: "$240,00",
   },
   {
     id: "i5",
     img: VlonePopSmoke,
-    name: "Fear Of God",
-    price: "$500",
+    name: "Vlone x Pop Smoke Tee",
+    price: "$100,00",
   },
   {
     id: "i6",
     img: TravisDunks,
     name: "Fear Of God",
-    price: "$500",
+    price: "$2061,00",
   },
 ];
 

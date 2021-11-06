@@ -6,4 +6,5 @@
   color: #000;
   font-size: 25px;
   font-family: "Arvo", "sans-serif";
+  user-select: none;
 }

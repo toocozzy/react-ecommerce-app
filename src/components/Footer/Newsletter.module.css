@@ -1,0 +1,41 @@
+.container {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.title {
+  color: #aaa;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.container form {
+  margin: 10px 0;
+}
+
+.container form input {
+  background-color: #f1f1f1;
+  line-height: 30px;
+  padding: 7px 20px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
+
+.container form input::placeholder {
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.container form button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  outline: none;
+  color: #aaa;
+  padding: 9px 15px;
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import ItemsList from "./components/Items/ItemsList";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <main>
         <ItemsList />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
