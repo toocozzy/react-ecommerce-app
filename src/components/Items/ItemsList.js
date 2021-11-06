@@ -13,7 +13,7 @@ const DUMMY_ITEMS = [
     id: "i1",
     img: AirDior,
     name: "Jordan 1 Retro High Dior",
-    price: "$8,128",
+    price: "$8128,00",
   },
   {
     id: "i2",
@@ -42,7 +42,7 @@ const DUMMY_ITEMS = [
   {
     id: "i6",
     img: TravisDunks,
-    name: "Fear Of God",
+    name: "Nike SB Dunk Low Travis Scott",
     price: "$2061,00",
   },
 ];

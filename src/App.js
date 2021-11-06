@@ -12,9 +12,7 @@ function App() {
       <main>
         <ItemsList />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

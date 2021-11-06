@@ -18,6 +18,7 @@
 
 .container form input {
   background-color: #f1f1f1;
+  color: #8c0327;
   line-height: 30px;
   padding: 7px 20px;
   border: none;
@@ -38,4 +39,8 @@
   color: #aaa;
   padding: 9px 15px;
   cursor: pointer;
+}
+
+.container form button:hover {
+  color: #8c0327;
 }

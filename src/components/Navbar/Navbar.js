@@ -8,11 +8,11 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <Navlink>
-        <i class="material-icons">apps</i>
+        <i class="ri-function-line"></i>
       </Navlink>
       <Logo />
       <Navlink>
-        <i class="material-icons">shopping_cart</i>
+        <i class="ri-shopping-bag-line"></i>
       </Navlink>
     </nav>
   );
