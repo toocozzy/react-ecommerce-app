@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AirDior from "../../assets/img/jordan-air-dior.jpg";
 import FogHoodie from "../../assets/img/fear-of-god-hoodie.jpg";
 import ConverseOW from "../../assets/img/converse-off-white.jpg";
@@ -47,15 +47,17 @@ const DUMMY_ITEMS = [
   },
 ];
 
-const list = DUMMY_ITEMS.map((item) => (
-  <Item name={item.name} price={item.price} img={item.img} key={item.id} />
-));
-
 const ItemsList = () => {
+  const list = DUMMY_ITEMS.map((item) => (
+    <Item name={item.name} price={item.price} img={item.img} key={item.id} />
+  ));
+
   return (
-    <section className={styles["items-section"]}>
-      <ul className={styles["items-container"]}>{list}</ul>
-    </section>
+    <>
+      <section className={styles["items-section"]}>
+        <ul className={styles["items-container"]}>{list}</ul>
+      </section>
+    </>
   );
 };
 

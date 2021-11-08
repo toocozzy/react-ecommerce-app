@@ -4,10 +4,10 @@ import Navlink from "../UI/Navlink";
 import Logo from "../UI/Logo";
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className={styles.nav}>
-      <Navlink>
+      <Navlink onClick={props.onShow}>
         <i class="ri-function-line"></i>
       </Navlink>
       <Logo />

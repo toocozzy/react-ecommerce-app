@@ -15,3 +15,16 @@
   src: local("Titillium Web"),
     url(./fonts/Titillium_Web/TitilliumWeb-Regular.ttf) format("truetype");
 }
+
+::selection {
+  background-color: blue;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: rgb(226, 232, 233);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(184, 196, 199);
+}

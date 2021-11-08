@@ -8,19 +8,7 @@
   align-items: center;
   justify-content: center;
   width: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .item {
-    width: 40%;
-    margin: 30px 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .item {
-    width: 30%;
-  }
+  cursor: pointer;
 }
 
 .item .image-container img {
@@ -29,7 +17,6 @@
 
 .item .image-container {
   width: 250px;
-  overflow-x: hidden;
 }
 
 .item .name {
@@ -47,4 +34,17 @@
 .item p {
   font-size: 1.3rem;
   color: #c4c4c4;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    width: 40%;
+    margin: 30px 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .item {
+    width: 30%;
+  }
 }
