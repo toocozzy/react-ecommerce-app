@@ -7,11 +7,11 @@ import styles from "./Navbar.module.css";
 const Navbar = (props) => {
   return (
     <nav className={styles.nav}>
-      <Navlink onClick={props.onShow}>
+      <Navlink onClick={props.onShowMenu}>
         <i class="ri-function-line"></i>
       </Navlink>
       <Logo />
-      <Navlink>
+      <Navlink onClick={props.onShowCart}>
         <i class="ri-shopping-bag-line"></i>
       </Navlink>
     </nav>
