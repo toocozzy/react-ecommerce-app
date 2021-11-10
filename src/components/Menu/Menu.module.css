@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   transition: 0.3s linear;
+  z-index: 200;
 }
 
 .menu.active {
@@ -87,6 +88,22 @@ ul {
 
 .close-menu i {
   font-size: 30px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  transition: 0.3s linear;
+  z-index: -300;
+}
+
+.backdrop.active {
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
