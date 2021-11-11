@@ -24,7 +24,7 @@
   <h3 align="center">react-ecommerce-app</h3>
 
   <p align="center">
-   (Still in the development)
+  
     <a href="https://toocozzy.github.io/react-ecommerce-app/">View Demo</a>
     ·
     <a href="https://github.com/toocozzy/react-ecommerce-app/issues">Report Bug</a>
