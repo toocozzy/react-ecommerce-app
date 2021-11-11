@@ -57,7 +57,7 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/toocozzy/react-ecommerce-app.git
    ```
 2. Install NPM packages
    ```sh
