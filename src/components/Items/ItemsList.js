@@ -7,6 +7,7 @@ import TravisDunks from "../../assets/img/travis-dunk.jpg";
 import VlonePopSmoke from "../../assets/img/vlone-pop-smoke.jpg";
 import Item from "./Item";
 import styles from "./ItemList.module.css";
+import ItemsModal from "./ItemsModal";
 
 const DUMMY_ITEMS = [
   {
@@ -49,13 +50,20 @@ const DUMMY_ITEMS = [
 
 const ItemsList = () => {
   const list = DUMMY_ITEMS.map((item) => (
-    <Item name={item.name} price={item.price} img={item.img} key={item.id} />
+    <Item
+      name={item.name}
+      price={item.price}
+      img={item.img}
+      key={item.id}
+      onClick={null}
+    />
   ));
 
   return (
     <>
       <section className={styles["items-section"]}>
         <ul className={styles["items-container"]}>{list}</ul>
+        <ItemsModal />
       </section>
     </>
   );
