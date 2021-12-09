@@ -1,0 +1,93 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translate(0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.item {
+  text-align: center;
+}
+
+.item h3 {
+  margin: 0.7rem 0;
+}
+
+.item .image img {
+  width: 100%;
+}
+
+.item .image {
+  width: 250px;
+}
+
+.item-modal-form button,
+.item-modal-form select {
+  width: 300px;
+  margin: 10px 0;
+  padding: 20px 0;
+  border: 2px solid #8c0327;
+  cursor: pointer;
+}
+
+.item-modal-form select {
+  text-transform: uppercase;
+}
+
+.add-btn {
+  background-color: #8c0327;
+  color: white;
+  text-transform: uppercase;
+}
+
+.close-modal-btn {
+  background-color: #fff;
+  color: #8c0327;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.item-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-modal-form label {
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 991px) {
+  .container {
+    width: 80%;
+  }
+
+  .item .image {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 60%;
+  }
+}
