@@ -24,7 +24,7 @@
   <h3 align="center">react-ecommerce-app</h3>
 
   <p align="center">
-   <a href="https://toocozzy.github.io/react-ecommerce-app/">View Demo</a>
+   <a href="https://toocozzy-fashion.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/toocozzy/react-ecommerce-app/issues">Report Bug</a>
     ·
@@ -47,6 +47,7 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 
 * React.js
 * CSS Modules
+* Netlify 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -72,8 +73,9 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 
 - [x] Add Readme
 - [x] Add backdrop to cart and side menu
-  - [ ] Add animations
-  - [ ] Add cart functionality
+- [x] Add cart functionality
+  - [ ] Improve cart UX
+ 
 
 
 
@@ -85,7 +87,7 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
  E-mail - oskar.daszkowski@gmail.com <br>
  LinkedIn - https://www.linkedin.com/in/oskar-daszkowski/
 
-Project Link: https://toocozzy.github.io/react-ecommerce-app/
+Project Link: https://toocozzy-fashion.netlify.app/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
