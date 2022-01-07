@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import Cart from "./components/Cart/Cart";
+import ContextProvider from "./context/ContextProvider";
 
 function App() {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -26,7 +27,7 @@ function App() {
   };
 
   return (
-    <>
+    <ContextProvider>
       <header>
         <Navbar onShowMenu={activeMenuHandler} onShowCart={activeCartHandler} />
       </header>
@@ -38,7 +39,7 @@ function App() {
         </aside>
       </main>
       <Footer />
-    </>
+    </ContextProvider>
   );
 }
 

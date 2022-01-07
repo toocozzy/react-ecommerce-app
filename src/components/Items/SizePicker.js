@@ -1,6 +1,6 @@
-const SizePicker = (props) => {
-  const DUMMY_SIZES = [46, 32, 42, "l", "xxl"];
+import { forwardRef } from "react";
 
+const SizePicker = forwardRef((props, ref) => {
   const mappedSize = props.availableSize.map((size) => (
     <option value={size}>{size}</option>
   ));
@@ -8,9 +8,9 @@ const SizePicker = (props) => {
   return (
     <>
       <label htmlFor={props.labelFor}>{props.labelText}</label>
-      <select>{mappedSize}</select>
+      <select ref={ref}>{mappedSize}</select>
     </>
   );
-};
+});
 
 export default SizePicker;

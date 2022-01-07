@@ -1,0 +1,33 @@
+.cart_item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid #bbb;
+  padding: 1rem 0;
+  width: 100%;
+  margin-left: 1.5rem;
+}
+
+.cart_item:nth-last-of-type(1) {
+  border: none;
+}
+
+.cart_item__img-container {
+  width: 130px;
+  height: 130px;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cart_item__img {
+  width: 100%;
+}
+
+.cart_item-container {
+  width: 100%;
+}
+
+.cart_item__detail {
+  margin: 10px 0;
+}
