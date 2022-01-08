@@ -11,6 +11,8 @@ const Cart = (props) => {
     e.preventDefault();
   };
 
+  console.log(ctx.items);
+
   return (
     <>
       <div className={`${styles.cart} ${props.isActive ? styles.active : ""}`}>
@@ -28,7 +30,7 @@ const Cart = (props) => {
           )}
         </main>
         <footer className={styles["cart__footer"]}>
-          {ctx.items.length > 0 ? (
+          {ctx.items.length > 0 && (
             <div className={styles.summary}>
               <p className={styles.summary__total_amount}>
                 Total: <span>${ctx.totalAmount}</span>
@@ -48,8 +50,6 @@ const Cart = (props) => {
                 </button>
               </form>
             </div>
-          ) : (
-            ""
           )}
         </footer>
       </div>

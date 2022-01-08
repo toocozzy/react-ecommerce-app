@@ -77,9 +77,9 @@
   background-color: #8c0327;
   color: white;
   text-transform: uppercase;
-  width: 200px;
-  /* margin: 10px 0; */
-  padding: 10px 0;
+  width: 300px;
+  margin-bottom: 15px;
+  padding: 15px 0;
   border: 2px solid #8c0327;
   cursor: pointer;
 }
@@ -89,9 +89,9 @@
   color: #8c0327;
   font-weight: bold;
   text-transform: uppercase;
-  width: 200px;
-  margin: 10px 0;
-  padding: 10px 0;
+  width: 300px;
+  margin-bottom: 30px;
+  padding: 15px 0;
   border: 2px solid #8c0327;
   cursor: pointer;
 }
