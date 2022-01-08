@@ -11,8 +11,6 @@ const Cart = (props) => {
     e.preventDefault();
   };
 
-  console.log(ctx.items);
-
   return (
     <>
       <div className={`${styles.cart} ${props.isActive ? styles.active : ""}`}>
