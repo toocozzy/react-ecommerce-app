@@ -46,27 +46,13 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 ### Built With
 
 * React.js
+* React Router
 * CSS Modules
 * Netlify 
+* Firebase
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/toocozzy/react-ecommerce-app.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
