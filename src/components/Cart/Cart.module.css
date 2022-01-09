@@ -76,6 +76,8 @@
 .summary__to_checkout_btn {
   background-color: #8c0327;
   color: white;
+  text-align: center;
+  font-size: 0.83rem;
   text-transform: uppercase;
   width: 300px;
   margin-bottom: 15px;
@@ -88,6 +90,7 @@
   background-color: #f7f7f7;
   color: #8c0327;
   font-weight: bold;
+  font-size: 0.8rem;
   text-transform: uppercase;
   width: 300px;
   margin-bottom: 30px;
@@ -96,10 +99,11 @@
   cursor: pointer;
 }
 
-.summary__form {
+.summary__buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 0 70px;
 }
 
 @media screen and (min-width: 768px) {
@@ -107,7 +111,7 @@
     width: 40%;
   }
 
-  .summary__form {
+  .summary__buttons {
     flex-direction: row;
   }
 

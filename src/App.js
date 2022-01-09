@@ -1,44 +1,17 @@
-import React, { useState } from "react";
-import ItemsList from "./components/Items/ItemsList";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Menu from "./components/Menu/Menu";
-import Cart from "./components/Cart/Cart";
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
 import ContextProvider from "./context/ContextProvider";
+import Checkout from "./pages/Checkout";
 
 function App() {
-  const [isMenuActive, setIsMenuActive] = useState(false);
-  const [isCartActive, setIsCartActive] = useState(false);
-
-  const activeMenuHandler = () => {
-    setIsMenuActive(true);
-  };
-
-  const inactiveMenuHandler = () => {
-    setIsMenuActive(false);
-  };
-
-  const activeCartHandler = () => {
-    setIsCartActive(true);
-  };
-
-  const inactiveCartHandler = () => {
-    setIsCartActive(false);
-  };
-
   return (
     <ContextProvider>
-      <header>
-        <Navbar onShowMenu={activeMenuHandler} onShowCart={activeCartHandler} />
-      </header>
-      <main>
-        <ItemsList />
-        <aside>
-          <Menu isActive={isMenuActive} inactive={inactiveMenuHandler} />
-          <Cart isActive={isCartActive} inactive={inactiveCartHandler} />
-        </aside>
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
     </ContextProvider>
   );
 }

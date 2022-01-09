@@ -3,13 +3,10 @@ import styles from "./Cart.module.css";
 import Backdrop from "../UI/Backdrop";
 import ContextApi from "../../context/context-api";
 import CartItems from "./CartItems";
+import { Link } from "react-router-dom";
 
 const Cart = (props) => {
   const ctx = useContext(ContextApi);
-
-  const submitCartHandler = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <>
@@ -33,20 +30,20 @@ const Cart = (props) => {
               <p className={styles.summary__total_amount}>
                 Total: <span>${ctx.totalAmount}</span>
               </p>
-              <form
-                className={styles.summary__form}
-                onSubmit={submitCartHandler}
-              >
-                <button className={styles["summary__to_checkout_btn"]}>
-                  Go to checkout
-                </button>
+              <div className={styles.summary__buttons}>
+                <Link
+                  to="/checkout"
+                  className={styles["summary__to_checkout_btn"]}
+                >
+                  Proceed to checkout
+                </Link>
                 <button
                   className={styles["summary__continue_btn"]}
                   onClick={props.inactive}
                 >
                   Continue shopping
                 </button>
-              </form>
+              </div>
             </div>
           )}
         </footer>

@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Logo.module.css";
 
 const Logo = () => {
   return (
     <div className={styles.logo}>
-      <a href="#">
+      <Link to="/home">
         <span>TOOCOZZY</span>
-      </a>
+      </Link>
     </div>
   );
 };
