@@ -76,8 +76,6 @@
 .summary__to_checkout_btn {
   background-color: #8c0327;
   color: white;
-  text-align: center;
-  font-size: 0.83rem;
   text-transform: uppercase;
   width: 300px;
   margin-bottom: 15px;
@@ -118,11 +116,5 @@
   .summary__continue_btn,
   .summary__to_checkout_btn {
     margin: 10px 10px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .cart {
-    width: 30%;
   }
 }

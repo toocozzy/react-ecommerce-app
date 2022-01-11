@@ -6,6 +6,7 @@ import ContextApi from "../../context/context-api";
 
 const ItemsModal = (props) => {
   const ctx = useContext(ContextApi);
+  const { isCartActive, setIsCartActive, setIsModalActive } = ctx;
   const sizeRef = useRef();
 
   const submitHandler = (e) => {
@@ -20,6 +21,11 @@ const ItemsModal = (props) => {
       size: enteredSize,
       price: props.item.price,
     });
+  };
+
+  const addItemHandler = () => {
+    // setIsCartActive(true);
+    // setIsModalActive(false);
   };
 
   return (
@@ -38,7 +44,9 @@ const ItemsModal = (props) => {
           availableSize={props.item.availableSize}
           ref={sizeRef}
         />
-        <button className={styles["add-btn"]}>Add to cart</button>
+        <button className={styles["add-btn"]} onClick={addItemHandler}>
+          Add to cart
+        </button>
         <button className={styles["close-modal-btn"]} onClick={props.onClose}>
           Close
         </button>

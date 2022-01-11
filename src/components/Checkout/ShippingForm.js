@@ -1,7 +1,7 @@
 import styles from "./ShippingForm.module.css";
 import { useRef, useState } from "react";
 
-const ShippingForm = () => {
+const ShippingForm = (props) => {
   const nameInputRef = useRef();
   const surnameInputRef = useRef();
   const addressInputRef = useRef();
@@ -63,10 +63,20 @@ const ShippingForm = () => {
     if (!formIsValid) {
       return;
     }
+
+    props.onConfirm({
+      name: enteredName,
+      surname: enteredSurname,
+      address: enteredAddress,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+      region: enteredRegion,
+      phoneNumber: enteredPhone,
+    });
   };
 
   return (
-    <form className={styles.form} onSubmit={confirmHandler}>
+    <form className={styles.form} id="shipping_form" onSubmit={confirmHandler}>
       <div className={styles.form__control}>
         <label htmlFor="name" className={styles["form__control-label"]}>
           First name
@@ -182,7 +192,6 @@ const ShippingForm = () => {
           </p>
         )}
       </div>
-      <button className={styles.form__submit}>place order</button>
     </form>
   );
 };

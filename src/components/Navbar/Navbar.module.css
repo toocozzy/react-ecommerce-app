@@ -16,3 +16,23 @@ i {
 i:hover {
   color: #8c0327;
 }
+
+.dupa {
+  position: relative;
+  z-index: -5;
+}
+
+.nav__counter {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c0327;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: -12%;
+  top: -17%;
+  z-index: -5;
+}

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import ItemsList from "../components/Items/ItemsList";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Menu from "../components/Menu/Menu";
 import Cart from "../components/Cart/Cart";
+import ContextApi from "../context/context-api";
 
 const Home = () => {
-  const [isMenuActive, setIsMenuActive] = useState(false);
-  const [isCartActive, setIsCartActive] = useState(false);
+  const { isMenuActive, setIsMenuActive } = useContext(ContextApi);
+  const { isCartActive, setIsCartActive } = useContext(ContextApi);
 
   const activeMenuHandler = () => {
     setIsMenuActive(true);
@@ -37,7 +38,7 @@ const Home = () => {
           <Cart isActive={isCartActive} inactive={inactiveCartHandler} />
         </aside>
       </main>
-      <Footer />
+      <Footer />)
     </>
   );
 };

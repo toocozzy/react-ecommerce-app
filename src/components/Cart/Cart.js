@@ -31,11 +31,10 @@ const Cart = (props) => {
                 Total: <span>${ctx.totalAmount}</span>
               </p>
               <div className={styles.summary__buttons}>
-                <Link
-                  to="/checkout"
-                  className={styles["summary__to_checkout_btn"]}
-                >
-                  Proceed to checkout
+                <Link to="/checkout">
+                  <button className={styles["summary__to_checkout_btn"]}>
+                    Proceed to checkout
+                  </button>
                 </Link>
                 <button
                   className={styles["summary__continue_btn"]}

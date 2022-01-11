@@ -1,18 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Item from "./Item";
 import styles from "./ItemList.module.css";
 import ItemsModal from "./ItemsModal";
+import ContextApi from "../../context/context-api";
 
 const ItemsList = () => {
   const [selectedItem, setSelectedItem] = useState(false);
   const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
+  const [isLoading, setIsLoading] = useState();
+  const { isModalActive, setIsModalActive } = useContext(ContextApi);
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const { signal } = abortController;
+
     const fetchItems = async () => {
+      setIsLoading(true);
+
       const res = await fetch(
-        "https://toocozzy-fashion-default-rtdb.europe-west1.firebasedatabase.app/items.json"
+        "https://toocozzy-fashion-default-rtdb.europe-west1.firebasedatabase.app/items.json",
+        {
+          signal: signal,
+        }
       );
 
       if (!res.ok) {
@@ -32,6 +42,7 @@ const ItemsList = () => {
           availableSize: resData[key].sizes,
         });
       }
+
       setItems(loadedItems);
       setIsLoading(false);
     };
@@ -41,6 +52,10 @@ const ItemsList = () => {
       console.log(error.message);
       setIsLoading(false);
     });
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   const closeItemModalHandler = () => {
@@ -70,7 +85,10 @@ const ItemsList = () => {
       img={item.img}
       key={item.id}
       size={item.availableSize}
-      onClick={() => setSelectedItem(item)}
+      onClick={() => {
+        setSelectedItem(item);
+        // setIsModalActive(true);
+      }}
     />
   ));
 

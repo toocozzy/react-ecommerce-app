@@ -15,11 +15,19 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+
+  if (action.type == "CLEAR") {
+    return defaultCartState;
+  }
+
   return defaultCartState;
 };
 
 const ContextProvider = (props) => {
   const [cartState, cartAction] = useReducer(cartReducer, defaultCartState);
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isCartActive, setIsCartActive] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
 
   const addItemHandler = (item) => {
     cartAction({
@@ -34,11 +42,24 @@ const ContextProvider = (props) => {
     });
   };
 
+  const clearCartHandler = () => {
+    cartAction({
+      type: "CLEAR",
+    });
+  };
+
   const contextApi = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    clearCart: clearCartHandler,
+    isMenuActive,
+    setIsMenuActive,
+    isCartActive,
+    setIsCartActive,
+    isModalActive,
+    setIsModalActive,
   };
 
   return (
