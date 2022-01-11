@@ -65,7 +65,9 @@ const ItemsList = () => {
   if (isLoading) {
     return (
       <section className={styles["items-section"]}>
-        <p className={styles.loading}>Loading...</p>
+        <p className={styles.loading}>
+          Loading <span className="loading dots2"></span>{" "}
+        </p>
       </section>
     );
   }
