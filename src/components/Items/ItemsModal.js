@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import Backdrop from "../UI/Backdrop";
 import styles from "./ItemsModal.module.css";
 import SizePicker from "./SizePicker";
@@ -6,13 +6,21 @@ import ContextApi from "../../context/context-api";
 
 const ItemsModal = (props) => {
   const ctx = useContext(ContextApi);
-  const { isCartActive, setIsCartActive, setIsModalActive } = ctx;
+  const [wrongSize, setWrongSize] = useState(false);
   const sizeRef = useRef();
+  const { isCartActive, setIsCartActive, setIsModalActive } = ctx;
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const enteredSize = sizeRef.current.value;
+
+    if (enteredSize === "select") {
+      setWrongSize(true);
+      return;
+    } else {
+      setWrongSize(false);
+    }
 
     ctx.addItem({
       id: props.item.id,
@@ -43,6 +51,8 @@ const ItemsModal = (props) => {
           labelText="Choose a size"
           availableSize={props.item.availableSize}
           ref={sizeRef}
+          wrongSize={wrongSize}
+          wrongSizeStyles={styles.wrong_size_info}
         />
         <button className={styles["add-btn"]} onClick={addItemHandler}>
           Add to cart

@@ -79,6 +79,10 @@
   }
 }
 
+.wrong_size_info {
+  color: rgb(255,0,0)
+}
+
 @media (min-width: 991px) {
   .container {
     width: 80%;

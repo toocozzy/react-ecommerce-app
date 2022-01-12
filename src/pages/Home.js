@@ -38,7 +38,7 @@ const Home = () => {
           <Cart isActive={isCartActive} inactive={inactiveCartHandler} />
         </aside>
       </main>
-      <Footer />)
+      <Footer />
     </>
   );
 };

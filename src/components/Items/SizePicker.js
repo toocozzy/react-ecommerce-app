@@ -1,14 +1,20 @@
 import { forwardRef } from "react";
 
 const SizePicker = forwardRef((props, ref) => {
-  const mappedSize = props.availableSize.map((size) => (
-    <option value={size}>{size}</option>
+  const defaultSizes = ["select", ...props.availableSize];
+  const mappedSize = defaultSizes.map((size) => (
+    <option value={size} defaultInputVaule="select">
+      {size}
+    </option>
   ));
 
   return (
     <>
       <label htmlFor={props.labelFor}>{props.labelText}</label>
       <select ref={ref}>{mappedSize}</select>
+      {props.wrongSize && (
+        <p className={props.wrongSizeStyles}>Please choose a valid size.</p>
+      )}
     </>
   );
 });
