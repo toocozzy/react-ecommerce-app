@@ -47,6 +47,7 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 
 * React.js
 * React Router
+* Redux Toolkit
 * CSS Modules
 * Netlify 
 * Firebase
@@ -60,30 +61,12 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 - [x] Add Readme
 - [x] Add backdrop to cart and side menu
 - [x] Add cart functionality
+- [x] Migrate state management to Redux
   - [ ] Improve cart UX
-  - [ ] Migrate state management to Redux
   - [ ] Connect back end with Sanity CMS
   - [ ] Add searching functionality 
   - [ ] Add pagination
  
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTACT -->
-## Contact
-
- E-mail - oskar.daszkowski@gmail.com <br>
- LinkedIn - https://www.linkedin.com/in/oskar-daszkowski/
-
-Project Link: https://toocozzy-fashion.netlify.app/
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
