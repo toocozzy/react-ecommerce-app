@@ -17,7 +17,7 @@ i:hover {
   color: #8c0327;
 }
 
-.dupa {
+.nav__btn-wrapper {
   position: relative;
   z-index: -5;
 }

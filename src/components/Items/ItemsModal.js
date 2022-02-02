@@ -1,14 +1,17 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useState } from "react";
 import Backdrop from "../UI/Backdrop";
 import styles from "./ItemsModal.module.css";
 import SizePicker from "./SizePicker";
-import ContextApi from "../../context/context-api";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../store/uiSlice";
+import { cartActions } from "../../store/cartSlice";
 
 const ItemsModal = (props) => {
-  const ctx = useContext(ContextApi);
+  const disptach = useDispatch();
   const [wrongSize, setWrongSize] = useState(false);
   const sizeRef = useRef();
-  const { isCartActive, setIsCartActive, setIsModalActive } = ctx;
+  const itemsInCart = useSelector((state) => state.cart.items);
+  console.log(itemsInCart);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -22,18 +25,22 @@ const ItemsModal = (props) => {
       setWrongSize(false);
     }
 
-    ctx.addItem({
-      id: props.item.id,
-      name: props.item.name,
-      img: props.item.img,
-      size: enteredSize,
-      price: props.item.price,
-    });
+    disptach(
+      cartActions.addItemToCart({
+        id: props.item.id,
+        name: props.item.name,
+        img: props.item.img,
+        enteredSize: enteredSize,
+        price: props.item.price,
+      })
+    );
+
+    disptach(uiActions.toggleModal());
+    disptach(uiActions.toggleCart());
   };
 
-  const addItemHandler = () => {
-    // setIsCartActive(true);
-    // setIsModalActive(false);
+  const closeModalHandler = () => {
+    disptach(uiActions.toggleModal());
   };
 
   return (
@@ -54,10 +61,11 @@ const ItemsModal = (props) => {
           wrongSize={wrongSize}
           wrongSizeStyles={styles.wrong_size_info}
         />
-        <button className={styles["add-btn"]} onClick={addItemHandler}>
-          Add to cart
-        </button>
-        <button className={styles["close-modal-btn"]} onClick={props.onClose}>
+        <button className={styles["add-btn"]}>Add to cart</button>
+        <button
+          className={styles["close-modal-btn"]}
+          onClick={closeModalHandler}
+        >
           Close
         </button>
       </form>

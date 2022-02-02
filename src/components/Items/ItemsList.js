@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import styles from "./ItemList.module.css";
 import ItemsModal from "./ItemsModal";
-import ContextApi from "../../context/context-api";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../store/uiSlice";
 
 const ItemsList = () => {
   const [selectedItem, setSelectedItem] = useState(false);
   const [items, setItems] = useState([]);
   const [httpError, setHttpError] = useState(null);
   const [isLoading, setIsLoading] = useState();
-  const { isModalActive, setIsModalActive } = useContext(ContextApi);
+  const dispatch = useDispatch();
+  const modalIsActive = useSelector((state) => state.ui.modalIsVisible);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -62,6 +64,10 @@ const ItemsList = () => {
     setSelectedItem(false);
   };
 
+  const toggleModalHandler = () => {
+    dispatch(uiActions.toggleModal());
+  };
+
   if (isLoading) {
     return (
       <section className={styles["items-section"]}>
@@ -89,7 +95,7 @@ const ItemsList = () => {
       size={item.availableSize}
       onClick={() => {
         setSelectedItem(item);
-        // setIsModalActive(true);
+        toggleModalHandler();
       }}
     />
   ));
@@ -99,9 +105,7 @@ const ItemsList = () => {
       <section className={styles["items-section"]}>
         <ul className={styles["items-container"]}>{list}</ul>
 
-        {selectedItem && (
-          <ItemsModal onClose={closeItemModalHandler} item={selectedItem} />
-        )}
+        {modalIsActive && <ItemsModal item={selectedItem} />}
       </section>
     </>
   );

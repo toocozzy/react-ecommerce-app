@@ -1,18 +1,27 @@
 import React from "react";
 import styles from "./Menu.module.css";
 import Backdrop from "../UI/Backdrop";
+import { useSelector, useDispatch } from "react-redux";
+import { uiActions } from "../../store/uiSlice";
 
 const Menu = (props) => {
+  const dispatch = useDispatch();
+  const menuIsActive = useSelector((state) => state.ui.menuIsVisible);
+
+  const closeMenuHandler = () => {
+    dispatch(uiActions.toggleMenu());
+  };
+
   return (
     <>
-      <div className={`${styles.menu} ${props.isActive ? styles.active : ""}`}>
+      <div className={`${styles.menu} ${menuIsActive ? styles.active : ""}`}>
         <form>
           <input type="text" placeholder="search" />
           <button>
             <i class="ri-search-line"></i>
           </button>
         </form>
-        <button className={styles["close-menu"]} onClick={props.inactive}>
+        <button className={styles["close-menu"]} onClick={closeMenuHandler}>
           <i class="ri-close-line"></i>
         </button>
         <ul>
@@ -39,7 +48,7 @@ const Menu = (props) => {
           <i class="ri-logout-box-line"></i> logout
         </button>
       </div>
-      {props.isActive && <Backdrop onClick={props.inactive} />}
+      {menuIsActive && <Backdrop onClick={closeMenuHandler} />}
     </>
   );
 };

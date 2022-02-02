@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import ContextApi from "../../context/context-api";
 import styles from "./CartItems.module.css";
+import { useSelector } from "react-redux";
 
 const CartItems = () => {
-  const ctx = useContext(ContextApi);
-  const mappedItems = ctx.items.map((item) => (
+  const addedItems = useSelector((state) => state.cart.items);
+
+  const mappedItems = addedItems.map((item) => (
     <li className={styles.cart_item}>
       <div className={styles["cart_item__img-container"]}>
         <img className={styles.cart_item__img} src={item.img} alt={item.name} />

@@ -1,22 +1,34 @@
-import React, { useContext } from "react";
-import ContextApi from "../../context/context-api";
+import React from "react";
+import { uiActions } from "../../store/uiSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 import Navlink from "../UI/Navlink";
 import Logo from "../UI/Logo";
 import styles from "./Navbar.module.css";
 
 const Navbar = (props) => {
-  const { items } = useContext(ContextApi);
+  const dispatch = useDispatch();
+  const totalQuantity = useSelector((state) => state.cart.items.length);
+
+  const toggleCartHandler = () => {
+    dispatch(uiActions.toggleCart());
+  };
+
+  const toggleMenuHandler = () => {
+    dispatch(uiActions.toggleMenu());
+  };
+
   return (
     <nav className={styles.nav}>
-      <Navlink onClick={props.onShowMenu}>
+      <Navlink onClick={toggleMenuHandler}>
         <i class="ri-function-line"></i>
       </Navlink>
       <Logo />
-      <Navlink onClick={props.onShowCart}>
-        <div className={styles.dupa}>
+      <Navlink onClick={toggleCartHandler}>
+        <div className={styles["nav__btn-wrapper"]}>
           <i class="ri-shopping-bag-line"></i>
-          {items.length > 0 && (
-            <span className={styles.nav__counter}>{items.length}</span>
+          {totalQuantity > 0 && (
+            <span className={styles.nav__counter}>{totalQuantity}</span>
           )}
         </div>
       </Navlink>

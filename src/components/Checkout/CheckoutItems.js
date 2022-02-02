@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import ContextApi from "../../context/context-api";
+import { useSelector } from "react-redux";
 import styles from "./CheckoutItems.module.css";
 
 const CheckoutItems = () => {
-  const ctx = useContext(ContextApi);
-  const mappedItems = ctx.items.map((item) => (
+  const products = useSelector((state) => state.cart.items);
+  const mappedItems = products.map((item) => (
     <li className={styles.checkout_item}>
       <div className={styles["checkout_item__img-container"]}>
         <img

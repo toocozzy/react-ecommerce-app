@@ -1,18 +1,35 @@
-import React from "react";
+import { useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
-import ContextProvider from "./context/ContextProvider";
 import Checkout from "./pages/Checkout";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartData, sendCartData } from "./store/cart-actions";
+
+let isInitial = true;
 
 function App() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(getCartData());
+  }, []);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    dispatch(sendCartData(cart));
+  }, [cart]);
+
   return (
-    <ContextProvider>
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-    </ContextProvider>
+    <Routes>
+      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/checkout" element={<Checkout />} />
+    </Routes>
   );
 }
 

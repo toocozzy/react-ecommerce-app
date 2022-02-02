@@ -1,16 +1,20 @@
-import { useContext, useState } from "react";
-import ContextApi from "../context/context-api";
+import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import ShippingForm from "../components/Checkout/ShippingForm";
 import styles from "./Checkout.module.css";
 import CheckoutItems from "../components/Checkout/CheckoutItems";
 import { Link } from "react-router-dom";
+import { cartActions } from "../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Checkout = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
-  const { items, totalAmount, clearCart } = useContext(ContextApi);
+  const dispatch = useDispatch();
+  const orderedItems = useSelector((state) => state.cart);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
@@ -18,14 +22,15 @@ const Checkout = () => {
       {
         method: "POST",
         body: JSON.stringify({
-          orderedItems: items,
+          orderedItems,
           clientInfo: userData,
         }),
       }
     );
     setIsSubmitting(false);
     setDidSubmit(true);
-    clearCart();
+
+    dispatch(cartActions.clearCart());
   };
 
   const checkoutContent = (
@@ -47,7 +52,7 @@ const Checkout = () => {
               <CheckoutItems />
             </div>
             <p className={styles["checkout__items-total"]}>
-              Total: <span>${totalAmount}</span>
+              Total: <span>${totalPrice}</span>
             </p>
             <div className={styles["checkout__submit-wrapper"]}></div>
           </div>
