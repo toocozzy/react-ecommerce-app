@@ -11,7 +11,9 @@ const SizePicker = forwardRef((props, ref) => {
   return (
     <>
       <label htmlFor={props.labelFor}>{props.labelText}</label>
-      <select ref={ref}>{mappedSize}</select>
+      <select ref={ref} className={props.selectStyles}>
+        {mappedSize}
+      </select>
       {props.wrongSize && (
         <p className={props.wrongSizeStyles}>Please choose a valid size.</p>
       )}

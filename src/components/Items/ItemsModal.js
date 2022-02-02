@@ -60,6 +60,7 @@ const ItemsModal = (props) => {
           ref={sizeRef}
           wrongSize={wrongSize}
           wrongSizeStyles={styles.wrong_size_info}
+          selectStyles={styles.size_picker__select}
         />
         <button className={styles["add-btn"]}>Add to cart</button>
         <button
