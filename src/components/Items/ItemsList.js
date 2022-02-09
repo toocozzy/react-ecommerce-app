@@ -8,16 +8,19 @@ import { uiActions } from "../../store/uiSlice";
 const ItemsList = () => {
   const [selectedItem, setSelectedItem] = useState(false);
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState(null);
-  const [isLoading, setIsLoading] = useState();
+
   const dispatch = useDispatch();
   const modalIsActive = useSelector((state) => state.ui.modalIsVisible);
+  // const isLoading = useSelector((state) => state.ui.isLoading);
 
   useEffect(() => {
     const abortController = new AbortController();
     const { signal } = abortController;
 
     const fetchItems = async () => {
+      // dispatch(uiActions.toggleLoading(true));
       setIsLoading(true);
 
       const res = await fetch(
@@ -49,9 +52,12 @@ const ItemsList = () => {
       setIsLoading(false);
     };
 
+    dispatch(uiActions.toggleLoading(false));
+
     fetchItems().catch((error) => {
       setHttpError(error.message);
       console.log(error.message);
+      // dispatch(uiActions.toggleLoading());
       setIsLoading(false);
     });
 
@@ -59,10 +65,6 @@ const ItemsList = () => {
       abortController.abort();
     };
   }, []);
-
-  const closeItemModalHandler = () => {
-    setSelectedItem(false);
-  };
 
   const toggleModalHandler = () => {
     dispatch(uiActions.toggleModal());

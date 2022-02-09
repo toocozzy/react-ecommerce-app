@@ -164,7 +164,7 @@ const ShippingForm = (props) => {
         <select
           name="region"
           id="region"
-          className={styles["form__control-input"]}
+          className={styles["form__control-input--select"]}
           ref={regionInputRef}
         >
           <option value="default">select</option>

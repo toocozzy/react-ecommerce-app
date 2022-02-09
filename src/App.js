@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCartData());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (isInitial) {
@@ -22,7 +22,7 @@ function App() {
     }
 
     dispatch(sendCartData(cart));
-  }, [cart]);
+  }, [cart, dispatch]);
 
   return (
     <Routes>

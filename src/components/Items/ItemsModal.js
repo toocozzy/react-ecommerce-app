@@ -30,7 +30,7 @@ const ItemsModal = (props) => {
         id: props.item.id,
         name: props.item.name,
         img: props.item.img,
-        enteredSize: enteredSize,
+        size: enteredSize,
         price: props.item.price,
       })
     );

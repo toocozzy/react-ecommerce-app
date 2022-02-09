@@ -1,23 +1,37 @@
 import styles from "./CartItems.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cartSlice";
 
-const CartItems = () => {
-  const addedItems = useSelector((state) => state.cart.items);
+const CartItems = (props) => {
+  const dispatch = useDispatch();
 
-  const mappedItems = addedItems.map((item) => (
+  const { name, img, price, size } = props.item;
+
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItemFromCart(props.item));
+  };
+
+  return (
     <li className={styles.cart_item}>
       <div className={styles["cart_item__img-container"]}>
-        <img className={styles.cart_item__img} src={item.img} alt={item.name} />
+        <img className={styles.cart_item__img} src={img} alt={name} />
       </div>
       <div className={styles["cart_item__detail-container"]}>
-        <p className={styles.cart_item__detail}>{item.name}</p>
-        <p className={styles.cart_item__detail}>size: {item.size}</p>
-        <p className={styles.cart_item__detail}>${item.price}</p>
+        <p className={styles.cart_item__detail}>{name}</p>
+        <p className={styles.cart_item__detail}>size: {size.toUpperCase()}</p>
+        <p className={styles.cart_item__detail}>${price}</p>
+      </div>
+
+      <div>
+        <button
+          className={styles["cart_item__remove-btn"]}
+          onClick={removeItemHandler}
+        >
+          <i class="ri-close-line"></i>
+        </button>
       </div>
     </li>
-  ));
-
-  return <ul className={styles["cart_item-container"]}>{mappedItems}</ul>;
+  );
 };
 
 export default CartItems;

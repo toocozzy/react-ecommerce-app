@@ -25,6 +25,19 @@
   outline: none;
 }
 
+.form__control-input--select {
+  -webkit-appearance: none;
+  background-image: url("./../../assets/icons/arrow-down-s-line.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 25px;
+  background-color: #f1f1f1;
+  color: #8c0327;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+}
+
 .form__control-invalid {
   font-size: 0.8rem;
   margin-top: 3px;

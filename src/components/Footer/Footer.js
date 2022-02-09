@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import Newsletter from "./Newsletter";
-import Logo from "../UI/Logo";
 
 const Footer = () => {
   return (

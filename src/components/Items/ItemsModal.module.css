@@ -40,10 +40,6 @@
   cursor: pointer;
 }
 
-.item-modal-form select {
-  text-transform: uppercase;
-}
-
 .add-btn {
   background-color: #8c0327;
   color: white;
@@ -74,6 +70,12 @@
 
 .size_picker__select {
   -webkit-appearance: none;
+  background-color: transparent;
+  background-image: url("./../../assets/icons/arrow-down-s-line.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 25px;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {

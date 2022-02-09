@@ -4,6 +4,7 @@ const initialState = {
   cartIsVisible: false,
   menuIsVisible: false,
   modalIsVisible: false,
+  isLoading: false,
 };
 
 const uiSlice = createSlice({
@@ -18,6 +19,9 @@ const uiSlice = createSlice({
     },
     toggleModal(state) {
       state.modalIsVisible = !state.modalIsVisible;
+    },
+    toggleLoading(state, action) {
+      state.isLoading = action.payload;
     },
   },
 });

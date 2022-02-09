@@ -1,17 +1,14 @@
-import React, { useEffect } from "react";
 import styles from "./Cart.module.css";
 import Backdrop from "../UI/Backdrop";
 import CartItems from "./CartItems";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../store/uiSlice";
-import { cartActions } from "../../store/cartSlice";
-import { fetchCartData } from "../../store/cart-actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartIsActive = useSelector((state) => state.ui.cartIsVisible);
-  const cartItems = useSelector((state) => state.cart.items);
+  const cart = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   const closeCartHandler = () => {
@@ -28,14 +25,27 @@ const Cart = () => {
           <i class="ri-close-line"></i>
         </button>
         <main className={styles["cart__main"]}>
-          {cartItems.length > 0 ? (
-            <CartItems />
+          {cart.length > 0 ? (
+            <ul className={styles["cart_item-container"]}>
+              {cart.map((item) => (
+                <CartItems
+                  key={item.id}
+                  item={{
+                    id: item.id,
+                    name: item.name,
+                    img: item.img,
+                    price: item.price,
+                    size: item.enteredSize,
+                  }}
+                />
+              ))}
+            </ul>
           ) : (
             <p className={styles["cart__main-empty"]}>Your cart is empty.</p>
           )}
         </main>
         <footer className={styles["cart__footer"]}>
-          {cartItems.length > 0 && (
+          {cart.length > 0 && (
             <div className={styles.summary}>
               <p className={styles.summary__total_amount}>
                 Total: <span>${totalPrice}</span>
