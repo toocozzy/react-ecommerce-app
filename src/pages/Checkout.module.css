@@ -28,7 +28,6 @@
 .checkout__items_details {
   width: 80%;
   margin-top: 30px;
-
   text-align: left;
 }
 
@@ -38,11 +37,15 @@
 }
 
 .checkout__items-container {
-  height: 475px;
-
+  min-height: 200px;
+  max-height: 475px;
+  margin: 40px 0;
   overflow: scroll;
   overflow-x: hidden;
-  margin: 40px 0;
+}
+
+.checkout__items-container::-webkit-scrollbar {
+  background-color: transparent;
 }
 
 .checkout__items-total {
