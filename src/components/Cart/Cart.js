@@ -36,6 +36,7 @@ const Cart = () => {
                     img: item.img,
                     price: item.price,
                     size: item.enteredSize,
+                    quantity: item.quantity,
                   }}
                 />
               ))}

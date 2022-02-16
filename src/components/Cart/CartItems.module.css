@@ -1,5 +1,4 @@
 .cart_item {
-  position: relative;
   display: flex;
   align-items: center;
   text-align: left;
@@ -11,10 +10,6 @@
 
 .cart_item:nth-last-of-type(1) {
   border: none;
-}
-
-.cart_item:nth-of-type(1) {
-  margin-top: 20px;
 }
 
 .cart_item__img-container {
@@ -47,4 +42,19 @@
 
 .cart_item__remove-btn i {
   color: #000;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 55px;
+}
+
+.cart_item__actions-btn {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
 }

@@ -5,10 +5,14 @@ import { cartActions } from "../../store/cartSlice";
 const CartItems = (props) => {
   const dispatch = useDispatch();
 
-  const { name, img, price, size } = props.item;
+  const { name, img, price, size, quantity } = props.item;
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(props.item));
+  };
+
+  const addItemHandler = () => {
+    dispatch(cartActions.addItemToCart(props.item));
   };
 
   return (
@@ -20,15 +24,21 @@ const CartItems = (props) => {
         <p className={styles.cart_item__detail}>{name}</p>
         <p className={styles.cart_item__detail}>size: {size.toUpperCase()}</p>
         <p className={styles.cart_item__detail}>${price}</p>
-      </div>
-
-      <div>
-        <button
-          className={styles["cart_item__remove-btn"]}
-          onClick={removeItemHandler}
-        >
-          <i class="ri-close-line"></i>
-        </button>
+        <div className={styles.actions}>
+          <button
+            onClick={removeItemHandler}
+            className={styles["cart_item__actions-btn"]}
+          >
+            -
+          </button>
+          <span>x {quantity}</span>
+          <button
+            className={styles["cart_item__actions-btn"]}
+            onClick={addItemHandler}
+          >
+            +
+          </button>
+        </div>
       </div>
     </li>
   );

@@ -18,10 +18,12 @@ export const getCartData = () => {
 
     try {
       const cartData = await fetchData();
+
       dispatch(
         cartActions.updateCart({
           items: cartData.items || [],
           totalPrice: cartData.totalPrice,
+          totalQuantity: cartData.totalQuantity,
         })
       );
     } catch (error) {
@@ -40,6 +42,7 @@ export const sendCartData = (cart) => {
           body: JSON.stringify({
             items: cart.items,
             totalPrice: cart.totalPrice,
+            totalQuantity: cart.totalQuantity,
           }),
         }
       );

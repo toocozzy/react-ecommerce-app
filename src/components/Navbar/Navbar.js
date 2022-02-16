@@ -8,7 +8,8 @@ import styles from "./Navbar.module.css";
 
 const Navbar = (props) => {
   const dispatch = useDispatch();
-  const totalQuantity = useSelector((state) => state.cart.items.length);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  console.log(totalQuantity);
 
   const toggleCartHandler = () => {
     dispatch(uiActions.toggleCart());
