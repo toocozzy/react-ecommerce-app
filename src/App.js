@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartData, sendCartData } from "./store/cart-actions";
+import NotFound from "./pages/NotFound";
 
 let isInitial = true;
 
@@ -29,6 +30,7 @@ function App() {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
