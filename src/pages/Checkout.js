@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import ShippingForm from "../components/Checkout/ShippingForm";
 import styles from "./Checkout.module.css";
 import CheckoutItems from "../components/Checkout/CheckoutItems";
+import Menu from "../components/Menu/Menu";
 import { Link } from "react-router-dom";
 import { cartActions } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,6 +61,9 @@ const Checkout = () => {
         <button className={styles.checkout__submit} form="shipping_form">
           place order
         </button>
+        <aside>
+          <Menu />
+        </aside>
       </main>
       <Footer />
     </>

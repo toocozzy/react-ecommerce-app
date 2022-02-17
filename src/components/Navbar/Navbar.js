@@ -1,6 +1,7 @@
 import React from "react";
 import { uiActions } from "../../store/uiSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Cart from "../Cart/Cart";
 
 import Navlink from "../UI/Navlink";
 import Logo from "../UI/Logo";
