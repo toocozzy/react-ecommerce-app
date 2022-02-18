@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Home from "./pages/Home";
-import Checkout from "./pages/Checkout";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartData, sendCartData } from "./store/cart-actions";
-import NotFound from "./pages/NotFound";
+import LoadingSpinner from "./components/UI/LoadingSpinner";
+import Home from "./pages/Home";
+
+const Checkout = React.lazy(() => import("./pages/Checkout"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 let isInitial = true;
 
@@ -26,12 +28,14 @@ function App() {
   }, [cart, dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Suspense fallback={<LoadingSpinner />}>
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 
