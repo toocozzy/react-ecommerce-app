@@ -62,8 +62,8 @@ react-ecommerce-app is fashion e-commerce store built in the Mobile First Approa
 - [x] Add backdrop to cart and side menu
 - [x] Add cart functionality
 - [x] Migrate state management to Redux
-  - [ ] Improve cart UX
-  - [ ] Connect back end with Sanity CMS
+- [x] Improve cart UX
+  - [ ] Connect back end to Sanity CMS
   - [ ] Add searching functionality 
   - [ ] Add pagination
  
